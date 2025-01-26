@@ -9,6 +9,7 @@ pygame.init()
 pygame.display.set_mode((640, 480))
 pygame.display.set_caption("PyKer Game")
 
+gameplay.placeBG()
 gameplay.placeCircle()
 gameplay.placeText()
 
@@ -19,7 +20,7 @@ while True:
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
-                if engine.isMouseOverlaps(400, 300, 100, 100, event.pos):
+                if engine.isMouseOverlaps(400, 300, gameplay.getCircle().get_width(), gameplay.getCircle().get_height(), event.pos):
                     saveData.saveData({
                         'score': saveData.loadData()['score'] + 1
                     })

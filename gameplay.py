@@ -1,9 +1,18 @@
 import pygame
 import saveData
 
+def placeBG():
+    bg = pygame.image.load('images/bg.png')
+    pygame.display.get_surface().blit(bg, (0, 0))
+    pygame.display.flip()
+
+circle = pygame.image.load('images/circle.png') 
+def getCircle():
+    global circle
+    return circle
+
 def placeCircle():
-    circle = pygame.image.load('images/circle.png')
-    circle = pygame.transform.scale(circle, (int(circle.get_width() * 1.3), int(circle.get_height() * 1.3)))
+    circle = pygame.transform.scale(getCircle(), (int(getCircle().get_width() * 1.3), int(getCircle().get_height() * 1.3)))
     pygame.display.get_surface().blit(circle, (400, 300))
     pygame.display.flip()
 
@@ -15,6 +24,7 @@ def placeText():
 
 def updatePart():
     pygame.display.get_surface().fill((0, 0, 0))
+    placeBG()
     placeText()
     placeCircle()
     playSound()
