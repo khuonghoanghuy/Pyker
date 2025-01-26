@@ -17,3 +17,8 @@ def updatePart():
     pygame.display.get_surface().fill((0, 0, 0))
     placeText()
     placeCircle()
+    playSound()
+
+def playSound():
+    sound = pygame.mixer.Sound('sounds/clicker.wav')
+    sound.play()
