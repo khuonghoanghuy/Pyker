@@ -26,6 +26,11 @@ while True:
             if event.key == pygame.K_r:
                 saveData.resetData()
                 gameplay.updatePart()
+            if event.key == pygame.K_SPACE:
+                saveData.saveData({
+                    'score': saveData.loadData()['score'] + 1
+                })
+                gameplay.updatePart()
             if event.key == pygame.K_ESCAPE:
                 pygame.quit()
                 exit()
