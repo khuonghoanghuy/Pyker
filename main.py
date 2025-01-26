@@ -1,6 +1,7 @@
 import pygame
 import saveData
 import gameplay
+import engine
 
 saveData.loadData()
 
@@ -18,10 +19,11 @@ while True:
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
             if event.button == 1:
-                saveData.saveData({
-                    'score': saveData.loadData()['score'] + 1
-                })
-                gameplay.updatePart()
+                if engine.isMouseOverlaps(400, 300, 100, 100, event.pos):
+                    saveData.saveData({
+                        'score': saveData.loadData()['score'] + 1
+                    })
+                    gameplay.updatePart()
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_r:
                 saveData.resetData()

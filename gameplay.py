@@ -3,7 +3,7 @@ import saveData
 
 def placeCircle():
     circle = pygame.image.load('images/circle.png')
-    circle = pygame.transform.scale(circle, (int(circle.get_width() * 1.1), int(circle.get_height() * 1.1)))
+    circle = pygame.transform.scale(circle, (int(circle.get_width() * 1.3), int(circle.get_height() * 1.3)))
     pygame.display.get_surface().blit(circle, (400, 300))
     pygame.display.flip()
 
