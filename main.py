@@ -5,7 +5,7 @@ import gameplay
 saveData.loadData()
 
 pygame.init()
-pygame.display.set_mode((800, 600))
+pygame.display.set_mode((640, 480))
 pygame.display.set_caption("PyKer Game")
 
 gameplay.placeCircle()
